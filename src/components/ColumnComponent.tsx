@@ -8,7 +8,7 @@ const ColumnComponent = ({title}: myProps) => {
     return (
 
             <div>
-                <h1>Column works</h1>
+                <h1>Column Works</h1>
                 <div>{title}</div>
             </div>
 
