@@ -1,0 +1,38 @@
+
+.wrapper {
+    font-family: 'Noto Serif', serif;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    margin: auto;
+    background-color: black;
+    color: aliceblue;
+    width: 350px;
+    height: 120px;
+    opacity: 80%;
+}
+
+.header {
+    text-align: left;
+    padding: 10px;
+}
+
+.buttonForm {
+    text-align: left;
+    padding: 10px;
+}
+
+.buttonText:hover {
+    cursor: pointer;
+}
+
+.buttonPlus {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 17px;
+}
+
+.buttonPlus:hover {
+    cursor: pointer;
+}
