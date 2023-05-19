@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './ColumnComponent.module.css';
 
-interface myProps {
+interface columnComponentProps {
     title: string
 }
 
-const ColumnComponent = ({title}: myProps) => {
+const ColumnComponent = ({title}: columnComponentProps) => {
     return (
         <>
             <h1>{title}</h1>
@@ -14,9 +14,7 @@ const ColumnComponent = ({title}: myProps) => {
                 <div className={s.buttonForm}
                      onClick={() => console.log('Add card clicked')}
                 >
-                    <button className={s.buttonPlus}>+</button>
-                    <span className={s.buttonText}>Add card</span>
-
+                    <span className={s.buttonText}>+ Add card</span>
                 </div>
             </div>
         </>

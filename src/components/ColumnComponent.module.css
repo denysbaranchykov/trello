@@ -23,17 +23,10 @@
     padding: 10px;
 }
 
-.buttonText:hover, .buttonPlus:hover {
+.buttonText:hover {
     cursor: pointer;
 }
 
-.buttonPlus {
-    border: none;
-    background: none;
-    color: white;
-    font-size: 17px;
-}
-
-.buttonPlus, .buttonText {
-    opacity: 75%;
+.buttonText {
+    opacity: 0.75;
 }
