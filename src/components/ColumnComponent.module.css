@@ -5,11 +5,11 @@
     font-family: 'Roboto', sans-serif;
     display: block;
     margin: auto;
-    background-color: black;
-    color: aliceblue;
+    background-color: #0e0e0e;
+    color: white;
     width: 350px;
     height: 120px;
-    opacity: 80%;
+    border-radius: 5px;
 }
 
 .header {
@@ -18,21 +18,22 @@
 }
 
 .buttonForm {
+    width: fit-content;
     text-align: left;
     padding: 10px;
 }
 
-.buttonText:hover {
+.buttonText:hover, .buttonPlus:hover {
     cursor: pointer;
 }
 
 .buttonPlus {
-    border: none;
-    background: none;
-    color: white;
-    font-size: 17px;
+    opacity: 0.75;
+    position: relative;
+    top: -1.7px;
 }
 
-.buttonPlus:hover {
-    cursor: pointer;
+.buttonText {
+    opacity: 0.75;
+    padding-left: 5px;
 }
