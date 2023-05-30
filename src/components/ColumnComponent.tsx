@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import s from './ColumnComponent.module.css';
 
 interface columnComponentProps {
@@ -8,15 +8,11 @@ interface columnComponentProps {
 const ColumnComponent = ({title}: columnComponentProps) => {
     const [isClicked, setIsClicked] = useState(false);
     const [inputValue, setInputValue] = useState('');
-    const clickAddCard = () => {
-        setIsClicked(prev => !prev)
-    }
     const changeValue = (e: any) => {
-        setInputValue(e.target.value)
+        setInputValue(e.target.value);
     }
-const inputFocus: any =  useRef(null);
-    if (inputFocus.current !== null) {
-            inputFocus.current.focus()
+    const clickAddCard = () => {
+        setIsClicked(prev => !prev);
     }
 
     return (
@@ -33,7 +29,7 @@ const inputFocus: any =  useRef(null);
                      onClick={clickAddCard}
                 >
                     {isClicked ? <input className={s.inputField}
-                                        ref={inputFocus}
+                                        autoFocus={true}
                                         type="text"
                                         value={inputValue}
                                         onChange={changeValue}
