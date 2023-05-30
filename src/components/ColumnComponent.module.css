@@ -51,12 +51,14 @@
     width: 320px;
     height: 30px;
     caret-color: deepskyblue;
+    font-size: 16px;
 }
 
 .cancel {
     float: left;
     padding: 10px 20px;
     color: #2299ff;
+    cursor: pointer;
 }
 
 .add {
@@ -64,4 +66,5 @@
     padding: 10px 20px;
     color: #2299ff;
     font-weight: bold;
+    cursor: pointer;
 }

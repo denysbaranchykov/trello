@@ -10,10 +10,16 @@ const ColumnComponent = ({title}: columnComponentProps) => {
     const [inputValue, setInputValue] = useState('');
     const changeValue = (e: any) => {
         setInputValue(e.target.value);
-    }
+    };
     const clickAddCard = () => {
         setIsClicked(prev => !prev);
-    }
+    };
+    const cancelClick = () => {
+        setIsClicked(false)
+    };
+    const addClick = () => {
+        console.log('add')
+    };
 
     return (
         <>
@@ -30,8 +36,8 @@ const ColumnComponent = ({title}: columnComponentProps) => {
                                value={inputValue}
                                onChange={changeValue}
                         />
-                        <span className={s.cancel} onClick={() => console.log('cancel')}>Cancel</span>
-                        <span className={s.add} onClick={() => console.log('add')}>Add</span>
+                        <span className={s.cancel} onClick={cancelClick}>Cancel</span>
+                        <span className={s.add} onClick={addClick}>Add</span>
                     </div>
 
                 }
