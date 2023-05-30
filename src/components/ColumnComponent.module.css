@@ -13,6 +13,7 @@
 }
 
 .header {
+    margin: 0;
     text-align: left;
     padding: 15px 10px;
     font-size: 14px;
@@ -48,6 +49,19 @@
     background-color: rgba(128, 128, 128, 0.5);
     color: white;
     width: 320px;
-    height: 20px;
+    height: 30px;
     caret-color: deepskyblue;
+}
+
+.cancel {
+    float: left;
+    padding: 10px 20px;
+    color: #2299ff;
+}
+
+.add {
+    float: right;
+    padding: 10px 20px;
+    color: #2299ff;
+    font-weight: bold;
 }

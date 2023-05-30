@@ -23,18 +23,23 @@ const ColumnComponent = ({title}: columnComponentProps) => {
                 <h2 className={s.header}>To Do</h2>
                 {
                     isClicked &&
-                    <span onClick={() => console.log('cancel')}>Cancel</span>
+                    <div>
+                        <input className={s.inputField}
+                               autoFocus={true}
+                               type="text"
+                               value={inputValue}
+                               onChange={changeValue}
+                        />
+                        <span className={s.cancel} onClick={() => console.log('cancel')}>Cancel</span>
+                        <span className={s.add} onClick={() => console.log('add')}>Add</span>
+                    </div>
+
                 }
                 <div className={s.buttonForm}
                      onClick={clickAddCard}
                 >
-                    {isClicked ? <input className={s.inputField}
-                                        autoFocus={true}
-                                        type="text"
-                                        value={inputValue}
-                                        onChange={changeValue}
-                        />
-                        :
+                    {
+                        !isClicked &&
                         <div className={s.addCard}>
                             <span className={s.buttonPlus}>+</span>
                             <span className={s.buttonText}>Add card</span>
