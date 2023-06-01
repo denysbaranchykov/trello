@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import s from './ColumnComponent.module.css';
+import {isDisabled} from "@testing-library/user-event/dist/utils";
 
 interface columnComponentProps {
     title: string
@@ -18,7 +19,7 @@ const ColumnComponent = ({title}: columnComponentProps) => {
         setIsClicked(false)
     };
     const addClick = () => {
-        console.log('add')
+       console.log('add');
     };
 
     return (
@@ -36,8 +37,11 @@ const ColumnComponent = ({title}: columnComponentProps) => {
                                value={inputValue}
                                onChange={changeValue}
                         />
-                        <span className={s.cancel} onClick={cancelClick}>Cancel</span>
-                        <span className={s.add} onClick={addClick}>Add</span>
+                        <button className={s.cancel}
+                              onClick={cancelClick}>Cancel</button>
+                        <button className={s.add}
+                              disabled={!inputValue || inputValue.replace(/\s/g, '').length === 0}
+                              onClick={addClick}>Add</button>
                     </div>
 
                 }
