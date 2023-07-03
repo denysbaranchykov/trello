@@ -5,6 +5,7 @@ interface columnComponentProps {
     title: string
 }
 
+//TODO type not interface
 interface myCardsType {
     title: string,
     id: string
@@ -17,15 +18,18 @@ const ColumnComponent = ({title}: columnComponentProps) => {
         {title: 'card1', id: '1'},
         {title: 'card2', id: '2'},
     ]);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const addClickDisabled = inputRef.current?.value.replace(/\s/g, '').length === 0
     const clickAddCard = () => {
         setIsClicked(prev => !prev);
     };
     const cancelClick = () => {
         setIsClicked(false)
     };
-    const inputRef = useRef<HTMLInputElement>(null);
     const addClick = () => {
-        if(inputRef.current?.value) {
+        console.log('addClick works');
+        if (inputRef.current?.value) {
+            console.log('addClick condition true');
             setCards((prev) => [
                     ...prev,
                     {
@@ -36,14 +40,9 @@ const ColumnComponent = ({title}: columnComponentProps) => {
             );
         }
     };
-    console.log('cards', cards);
-
-
-
 
 
     let uniqueId = new Set();
-    console.log('uniqueId', uniqueId);
 
     const generateId = (): string => {
         let id = '';
@@ -72,7 +71,9 @@ const ColumnComponent = ({title}: columnComponentProps) => {
         uniqueId.add(id);
         return id;
     }
-    console.log('current value', inputRef.current?.value.replace(/\s/g, '').length === 1);
+
+    console.log('current value', inputRef.current?.value);
+    console.log('addClickDisabled', addClickDisabled);
 
     return (
         <>
@@ -82,30 +83,30 @@ const ColumnComponent = ({title}: columnComponentProps) => {
                 <h2 className={s.header}>To Do</h2>
                 {
                     isClicked &&
-                    <div>
-                        <input className={s.inputField}
-                               autoFocus={true}
-                               ref={inputRef}
-                               type="text"
-                        />
-                        <button className={s.cancel}
-                                onClick={cancelClick}>Cancel
-                        </button>
-                        <button className={s.add}
-                                disabled={inputRef.current?.value.replace(/\s/g, '').length === 0}
-                                onClick={addClick}>Add
-                        </button>
-                    </div>
+                  <div>
+                    <input className={s.inputField}
+                           autoFocus={true}
+                           ref={inputRef}
+                           type="text"
+                    />
+                    <button className={s.cancel}
+                            onClick={cancelClick}>Cancel
+                    </button>
+                    <button className={s.add}
+                            disabled={addClickDisabled}
+                            onClick={addClick}>Add
+                    </button>
+                  </div>
                 }
                 <div className={s.buttonForm}
                      onClick={clickAddCard}
                 >
                     {
                         !isClicked &&
-                        <div className={s.addCard}>
-                            <span className={s.buttonPlus}>+</span>
-                            <span className={s.buttonText}>Add card</span>
-                        </div>
+                      <div className={s.addCard}>
+                        <span className={s.buttonPlus}>+</span>
+                        <span className={s.buttonText}>Add card</span>
+                      </div>
                     }
                 </div>
             </div>
